@@ -19,8 +19,8 @@ for(let i = 0; i < process.argv.length; ++i) {
 }
 
 const options = {
-  key: fs.readFileSync('/demo/key.pem'),     // 指向您的私钥文件
-  cert: fs.readFileSync('/demo/cert.pem'), // 指向您的证书文件
+  key: fs.readFileSync('/demo/ascenc.cc.key'),     // 指向您的私钥文件
+  cert: fs.readFileSync('/demo/ascenc.cc.pem'), // 指向您的证书文件
 };
 
 http
