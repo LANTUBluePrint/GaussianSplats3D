@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 let baseDirectory = '.';
-let port = 443;
+let port = 80;
 let host = '0.0.0.0';
 let lasttRequesTime = performance.now() / 1000;
 for(let i = 0; i < process.argv.length; ++i) {
@@ -15,13 +15,8 @@ for(let i = 0; i < process.argv.length; ++i) {
   }
   if (process.argv[i] == '-h' && i < process.argv.length - 1) {
     host = process.argv[i + 1];
-  } 
+  }
 }
-
-const options = {
-  key: fs.readFileSync('./build/demo/ssl/ascenc.cc.key'),     // 指向您的私钥文件
-  cert: fs.readFileSync('./build/demo/ssl/ascenc.cc.pem'), // 指向您的证书文件
-};
 
 http
   .createServer(function (request, response) {
