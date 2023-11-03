@@ -21,8 +21,10 @@ for(let i = 0; i < process.argv.length; ++i) {
 http
   .createServer(function (request, response) {
 
-    response.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-    response.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+    // 添加CORS头
+    response.setHeader("Access-Control-Allow-Origin", "*"); // 允许所有域
+    response.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS"); // 允许的HTTP方法
+    response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); // 允许的HTTP头
 
     let filePath = baseDirectory + request.url;
     if (filePath == "./") filePath = "./index.html";
