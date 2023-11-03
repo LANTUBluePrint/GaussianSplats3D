@@ -3,8 +3,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 let baseDirectory = '.';
-let port = 8080;
-let host = '127.0.0.1';
+let port = 80;
+let host = '0.0.0.0';
 let lasttRequesTime = performance.now() / 1000;
 for(let i = 0; i < process.argv.length; ++i) {
   if (process.argv[i] == '-d' && i < process.argv.length - 1) {
